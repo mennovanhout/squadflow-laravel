@@ -383,20 +383,12 @@
             <p class="text-on-surface-variant text-xl mb-12 max-w-2xl mx-auto leading-relaxed">
                 Join over 50,000 squads already tracking their legendary moments on {{ config('app.name') }}.
             </p>
-            <div class="flex flex-col sm:flex-row justify-center items-center gap-6">
-                <a class="flex items-center gap-4 bg-black text-white px-8 py-4 rounded-md border border-white/10 hover:border-primary/50 transition-all group w-full sm:w-auto" href="#">
-                    <span class="material-symbols-outlined text-3xl">ios</span>
-                    <div class="text-left">
-                        <div class="text-[10px] uppercase font-bold text-gray-400">Download on the</div>
-                        <div class="text-lg font-black font-headline leading-none">App Store</div>
-                    </div>
+            <div class="flex flex-col sm:flex-row justify-center items-center gap-4">
+                <a href="#" class="inline-block hover:opacity-80 transition-opacity">
+                    <img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" alt="Download on the App Store" class="h-[52px]" />
                 </a>
-                <a class="flex items-center gap-4 bg-black text-white px-8 py-4 rounded-md border border-white/10 hover:border-primary/50 transition-all group w-full sm:w-auto" href="#">
-                    <span class="material-symbols-outlined text-3xl">play_store_installed</span>
-                    <div class="text-left">
-                        <div class="text-[10px] uppercase font-bold text-gray-400">Get it on</div>
-                        <div class="text-lg font-black font-headline leading-none">Google Play</div>
-                    </div>
+                <a href="#" class="inline-block hover:opacity-80 transition-opacity">
+                    <img src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Get it on Google Play" class="h-[76px] -my-3" />
                 </a>
             </div>
         </div>
