@@ -11,10 +11,11 @@ Route::prefix('auth')->group(function () {
     Route::middleware('auth:sanctum')->group(function () {
         Route::get('/me', [AuthController::class, 'user']);
         Route::post('/logout', [AuthController::class, 'logout']);
-
-        Route::prefix('games')->group(function () {
-            Route::get('/', [GameController::class, 'index']);
-        });
     });
 });
 
+Route::middleware('auth:sanctum')->group(function () {
+    Route::prefix('games')->group(function () {
+        Route::get('/', [GameController::class, 'index']);
+    });
+});

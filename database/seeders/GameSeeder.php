@@ -13,7 +13,7 @@ class GameSeeder extends Seeder
         Game::updateOrCreate(
             ['name' => 'Valorant'],
             [
-                'image' => 'https://squaregames.gg/images/games/valorant.jpg',
+                'image' => 'https://squadflow.gg/images/games/valorant.jpg',
                 'subtitle' => 'MARCH 2026',
             ]
         );
@@ -21,7 +21,7 @@ class GameSeeder extends Seeder
         Game::updateOrCreate(
             ['name' => 'Rocket League'],
             [
-                'image' => 'https://squaregames.gg/images/games/rocketleague.jpg',
+                'image' => 'https://squadflow.gg/images/games/rocketleague.jpg',
                 'subtitle' => 'MARCH 2026',
             ]
         );
@@ -29,7 +29,7 @@ class GameSeeder extends Seeder
         Game::updateOrCreate(
             ['name' => 'CS: GO'],
             [
-                'image' => 'https://squaregames.gg/images/games/counterstrike.jpg',
+                'image' => 'https://squadflow.gg/images/games/counterstrike.jpg',
                 'subtitle' => 'MARCH 2026',
             ]
         );
