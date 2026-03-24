@@ -115,12 +115,12 @@
     <section class="relative overflow-hidden px-6 py-20 lg:py-32">
         <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <div class="z-10">
-                <span class="inline-block px-4 py-1 rounded-full bg-primary/10 text-primary font-bold text-xs uppercase tracking-widest mb-6">Level Up Together</span>
+                 <span class="inline-block px-4 py-1 rounded-full bg-primary/10 text-primary font-bold text-xs uppercase tracking-widest mb-6">Level Up Together</span>
                 <h1 class="text-5xl lg:text-7xl font-black font-headline leading-[1.1] mb-8 tracking-tighter">
                     TRACK YOUR <span class="text-primary italic text-glow">SQUAD'S</span> PROGRESS
                 </h1>
                 <p class="text-on-surface-variant text-lg lg:text-xl max-w-lg mb-10 leading-relaxed font-body">
-                    The ultimate manual achievement logger and timeline for elite gaming squads. No APIs, no restrictions—just pure progress tracking.
+                    The ultimate manual achievement logger, timeline, and session scheduler for elite gaming squads. Schedule events, see who's joining, and track your progress—no APIs, no restrictions.
                 </p>
                 <div class="flex flex-col sm:flex-row gap-4">
                     <button class="liquid-neon-gradient text-on-primary px-10 py-4 rounded-full font-black text-lg font-headline shadow-[0_0_40px_rgba(0,255,194,0.2)] hover:scale-105 transition-all">
@@ -179,28 +179,56 @@
                         A permanent archive of your gaming legacy. Filter by game, squad member, or date to relive the glory days.
                     </p>
                 </div>
-                <!-- Feature 4: High End Visual -->
-                <div class="md:col-span-12 lg:col-span-8 bg-surface-container rounded-lg p-12 overflow-hidden relative">
-                    <div class="relative z-10 flex flex-col md:flex-row items-center gap-12">
-                        <div class="flex-1">
-                            <h3 class="text-3xl font-bold font-headline mb-4">Deep Analytics</h3>
-                            <p class="text-on-surface-variant text-lg">Detailed stats on completion rates, session duration, and peak performance times for every squad member.</p>
+                <!-- Feature 4: Session Scheduling -->
+                <div class="md:col-span-12 lg:col-span-4 bg-surface-container rounded-lg p-10 group hover:bg-surface-container-high transition-all duration-300">
+                    <span class="material-symbols-outlined text-primary text-4xl mb-6">event</span>
+                    <h3 class="text-3xl font-bold font-headline mb-4">Squad Events</h3>
+                    <p class="text-on-surface-variant text-lg leading-relaxed">
+                        Schedule gaming sessions and see exactly who's joining. No more guessing—create an event, share it with your squad, and lock in your lineup.
+                    </p>
+                    <div class="mt-8 space-y-3">
+                        <div class="flex items-center gap-3 bg-surface-container-low rounded-md px-4 py-3 border border-outline-variant/10">
+                            <span class="material-symbols-outlined text-primary text-xl">calendar_month</span>
+                            <span class="text-sm font-bold font-headline">Fri 9 PM — Ranked Arena</span>
+                            <span class="ml-auto text-xs text-primary font-bold bg-primary/10 px-2 py-0.5 rounded-full">4 joined</span>
                         </div>
-                        <div class="flex-1 w-full">
-                            <div class="space-y-4">
-                                <div class="h-4 bg-surface-variant rounded-full overflow-hidden">
+                        <div class="flex items-center gap-3 bg-surface-container-low rounded-md px-4 py-3 border border-outline-variant/10">
+                            <span class="material-symbols-outlined text-secondary text-xl">calendar_month</span>
+                            <span class="text-sm font-bold font-headline">Sat 3 PM — Raid Night</span>
+                            <span class="ml-auto text-xs text-secondary font-bold bg-secondary/10 px-2 py-0.5 rounded-full">6 joined</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- Feature 5: Deep Analytics -->
+                <div class="md:col-span-12 lg:col-span-4 bg-surface-container rounded-lg p-10 overflow-hidden relative group hover:bg-surface-container-high transition-all duration-300">
+                    <div class="relative z-10">
+                        <span class="material-symbols-outlined text-secondary text-4xl mb-6">monitoring</span>
+                        <h3 class="text-3xl font-bold font-headline mb-4">Deep Analytics</h3>
+                        <p class="text-on-surface-variant text-lg leading-relaxed">
+                            Detailed stats on completion rates, session duration, and peak performance for every squad member.
+                        </p>
+                        <div class="mt-8 space-y-4">
+                            <div>
+                                <div class="flex justify-between text-sm font-bold font-headline mb-1"><span>Completion</span><span class="text-primary">80%</span></div>
+                                <div class="h-3 bg-surface-variant rounded-full overflow-hidden">
                                     <div class="h-full liquid-neon-gradient w-4/5"></div>
                                 </div>
-                                <div class="h-4 bg-surface-variant rounded-full overflow-hidden">
+                            </div>
+                            <div>
+                                <div class="flex justify-between text-sm font-bold font-headline mb-1"><span>Win Rate</span><span class="text-secondary">60%</span></div>
+                                <div class="h-3 bg-surface-variant rounded-full overflow-hidden">
                                     <div class="h-full bg-secondary w-3/5"></div>
                                 </div>
-                                <div class="h-4 bg-surface-variant rounded-full overflow-hidden">
+                            </div>
+                            <div>
+                                <div class="flex justify-between text-sm font-bold font-headline mb-1"><span>Avg. Session</span><span class="text-tertiary">40%</span></div>
+                                <div class="h-3 bg-surface-variant rounded-full overflow-hidden">
                                     <div class="h-full bg-tertiary w-2/5"></div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="absolute bottom-[-10%] right-[-10%] w-64 h-64 bg-primary/5 blur-[80px] rounded-full"></div>
+                    <div class="absolute bottom-[-10%] right-[-10%] w-40 h-40 bg-primary/5 blur-[80px] rounded-full"></div>
                 </div>
             </div>
         </div>
@@ -211,7 +239,7 @@
             <h2 class="text-4xl lg:text-5xl font-black font-headline tracking-tighter mb-4">YOUR MISSION BRIEFING</h2>
             <div class="w-24 h-1.5 liquid-neon-gradient mx-auto rounded-full"></div>
         </div>
-        <div class="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-12">
+        <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
             <div class="flex flex-col items-center text-center">
                 <div class="w-20 h-20 rounded-xl bg-surface-container-high flex items-center justify-center text-primary font-black text-3xl font-headline mb-8 border border-primary/20">1</div>
                 <h4 class="text-2xl font-bold font-headline mb-3">Join the Hub</h4>
@@ -219,11 +247,16 @@
             </div>
             <div class="flex flex-col items-center text-center">
                 <div class="w-20 h-20 rounded-xl bg-surface-container-high flex items-center justify-center text-secondary font-black text-3xl font-headline mb-8 border border-secondary/20">2</div>
+                <h4 class="text-2xl font-bold font-headline mb-3">Schedule Sessions</h4>
+                <p class="text-on-surface-variant font-body">Create events for upcoming gaming sessions. Your squad joins up so everyone knows who's available.</p>
+            </div>
+            <div class="flex flex-col items-center text-center">
+                <div class="w-20 h-20 rounded-xl bg-surface-container-high flex items-center justify-center text-tertiary font-black text-3xl font-headline mb-8 border border-tertiary/20">3</div>
                 <h4 class="text-2xl font-bold font-headline mb-3">Play &amp; Win</h4>
                 <p class="text-on-surface-variant font-body">Go out there and conquer your favorite titles together or solo. No connection to app required.</p>
             </div>
             <div class="flex flex-col items-center text-center">
-                <div class="w-20 h-20 rounded-xl bg-surface-container-high flex items-center justify-center text-tertiary font-black text-3xl font-headline mb-8 border border-tertiary/20">3</div>
+                <div class="w-20 h-20 rounded-xl bg-surface-container-high flex items-center justify-center text-primary font-black text-3xl font-headline mb-8 border border-primary/20">4</div>
                 <h4 class="text-2xl font-bold font-headline mb-3">Record Legacy</h4>
                 <p class="text-on-surface-variant font-body">Log your achievements in seconds and watch your shared timeline grow with every victory.</p>
             </div>
@@ -254,6 +287,75 @@
                     </ul>
                 </div>
             </div>
+            <!-- Squad Events Showcase -->
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-24 items-center mb-32">
+                <div>
+                    <h2 class="text-4xl lg:text-5xl font-black font-headline tracking-tighter mb-8 leading-tight">SQUAD EVENTS</h2>
+                    <p class="text-on-surface-variant text-lg mb-10 leading-relaxed">
+                        No more "who's on tonight?" messages. Create gaming sessions, pick a date and time, and let your squad join up. You'll know exactly who's going to be available before you even launch the game.
+                    </p>
+                    <ul class="space-y-6">
+                        <li class="flex items-center gap-4">
+                            <span class="material-symbols-outlined text-primary" data-weight="fill">check_circle</span>
+                            <span class="font-bold font-headline">One-Tap Session Scheduling</span>
+                        </li>
+                        <li class="flex items-center gap-4">
+                            <span class="material-symbols-outlined text-primary" data-weight="fill">check_circle</span>
+                            <span class="font-bold font-headline">RSVP &amp; Live Attendance Count</span>
+                        </li>
+                        <li class="flex items-center gap-4">
+                            <span class="material-symbols-outlined text-primary" data-weight="fill">check_circle</span>
+                            <span class="font-bold font-headline">Reminders Before Every Session</span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="relative">
+                    <div class="absolute -bottom-10 -right-10 w-40 h-40 bg-primary/20 blur-[60px]"></div>
+                    <!-- Event card mockup -->
+                    <div class="bg-surface-container rounded-lg border border-outline-variant/10 p-8 space-y-6 shadow-2xl">
+                        <div class="flex items-center justify-between">
+                            <h4 class="text-xl font-black font-headline">Upcoming Sessions</h4>
+                            <span class="material-symbols-outlined text-primary">add_circle</span>
+                        </div>
+                        <div class="bg-surface-container-low rounded-md p-5 border border-primary/20 space-y-4">
+                            <div class="flex items-center justify-between">
+                                <div>
+                                    <div class="text-lg font-bold font-headline">Ranked Arena Night</div>
+                                    <div class="text-sm text-on-surface-variant">Friday, 9:00 PM</div>
+                                </div>
+                                <span class="text-xs font-bold bg-primary/10 text-primary px-3 py-1 rounded-full">OPEN</span>
+                            </div>
+                            <div class="flex items-center gap-2">
+                                <div class="w-8 h-8 rounded-full bg-primary/30 border border-primary/50 flex items-center justify-center text-xs font-bold">JD</div>
+                                <div class="w-8 h-8 rounded-full bg-secondary/30 border border-secondary/50 flex items-center justify-center text-xs font-bold">KS</div>
+                                <div class="w-8 h-8 rounded-full bg-tertiary/30 border border-tertiary/50 flex items-center justify-center text-xs font-bold">ML</div>
+                                <div class="w-8 h-8 rounded-full bg-surface-container-highest border border-outline-variant/30 flex items-center justify-center text-xs font-bold text-on-surface-variant">+1</div>
+                                <span class="ml-auto text-sm text-on-surface-variant">4 / 5 joined</span>
+                            </div>
+                            <button class="w-full liquid-neon-gradient text-on-primary py-2.5 rounded-full font-bold font-headline text-sm hover:scale-[1.02] transition-transform">Join Session</button>
+                        </div>
+                        <div class="bg-surface-container-low rounded-md p-5 border border-outline-variant/10 space-y-4 opacity-80">
+                            <div class="flex items-center justify-between">
+                                <div>
+                                    <div class="text-lg font-bold font-headline">Weekend Raid</div>
+                                    <div class="text-sm text-on-surface-variant">Saturday, 3:00 PM</div>
+                                </div>
+                                <span class="text-xs font-bold bg-secondary/10 text-secondary px-3 py-1 rounded-full">FILLING UP</span>
+                            </div>
+                            <div class="flex items-center gap-2">
+                                <div class="w-8 h-8 rounded-full bg-primary/30 border border-primary/50 flex items-center justify-center text-xs font-bold">AB</div>
+                                <div class="w-8 h-8 rounded-full bg-secondary/30 border border-secondary/50 flex items-center justify-center text-xs font-bold">CD</div>
+                                <div class="w-8 h-8 rounded-full bg-tertiary/30 border border-tertiary/50 flex items-center justify-center text-xs font-bold">EF</div>
+                                <div class="w-8 h-8 rounded-full bg-primary/30 border border-primary/50 flex items-center justify-center text-xs font-bold">GH</div>
+                                <div class="w-8 h-8 rounded-full bg-secondary/30 border border-secondary/50 flex items-center justify-center text-xs font-bold">IJ</div>
+                                <div class="w-8 h-8 rounded-full bg-surface-container-highest border border-outline-variant/30 flex items-center justify-center text-xs font-bold text-on-surface-variant">+1</div>
+                                <span class="ml-auto text-sm text-on-surface-variant">6 / 8 joined</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-24 items-center">
                 <div>
                     <h2 class="text-4xl lg:text-5xl font-black font-headline tracking-tighter mb-8 leading-tight">SOCIAL HUB</h2>
