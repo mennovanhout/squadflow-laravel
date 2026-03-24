@@ -357,6 +357,10 @@
             </div>
 
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-24 items-center">
+                <div class="relative">
+                    <div class="absolute -bottom-10 -right-10 w-40 h-40 bg-secondary/20 blur-[60px]"></div>
+                    <img class="rounded-lg shadow-2xl border border-white/5" data-alt="Abstract visualization of a social network graph with neon lines connecting nodes on a deep black background, tech aesthetic" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCdSS9_TEg0NqMaooHMxaMXOM7VCloNH_1KW0bDqB6IOP15sjRAtcayr2PFDlsftuog8r-49kx1aDxHrvQmGDACtXltQEQH1rtsU8P14WkY7urrD7q746IIGjk326obbKeX3LxHpEmtkr2hpqvx1UzjpWb84pQ0L8Ez7MvFXFFDjMHiiYLQQa3U4aZIhbbayCCQsdAHcKGwCe0OD05jXOS7riwMCqmQIdWSO0Oo1m952D30tmONqgncuk_SIDO0lN-NiM-jC6BDTCw"/>
+                </div>
                 <div>
                     <h2 class="text-4xl lg:text-5xl font-black font-headline tracking-tighter mb-8 leading-tight">SOCIAL HUB</h2>
                     <p class="text-on-surface-variant text-lg mb-10 leading-relaxed">
@@ -368,10 +372,6 @@
                         <div class="w-12 h-12 rounded-full bg-surface-container-highest border border-outline-variant/30 flex items-center justify-center font-bold">ML</div>
                         <div class="w-12 h-12 rounded-full bg-primary/20 border border-primary/40 flex items-center justify-center font-bold text-primary">+12</div>
                     </div>
-                </div>
-                <div class="relative">
-                    <div class="absolute -bottom-10 -right-10 w-40 h-40 bg-secondary/20 blur-[60px]"></div>
-                    <img class="rounded-lg shadow-2xl border border-white/5" data-alt="Abstract visualization of a social network graph with neon lines connecting nodes on a deep black background, tech aesthetic" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCdSS9_TEg0NqMaooHMxaMXOM7VCloNH_1KW0bDqB6IOP15sjRAtcayr2PFDlsftuog8r-49kx1aDxHrvQmGDACtXltQEQH1rtsU8P14WkY7urrD7q746IIGjk326obbKeX3LxHpEmtkr2hpqvx1UzjpWb84pQ0L8Ez7MvFXFFDjMHiiYLQQa3U4aZIhbbayCCQsdAHcKGwCe0OD05jXOS7riwMCqmQIdWSO0Oo1m952D30tmONqgncuk_SIDO0lN-NiM-jC6BDTCw"/>
                 </div>
             </div>
         </div>
