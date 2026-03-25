@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Enums\FriendshipStatus;
 use App\Http\Requests\InviteFriendRequest;
 use App\Http\Resources\FriendResource;
 use App\Models\User;
@@ -33,5 +34,52 @@ class FriendController extends Controller
         $userFriend->load('friend');
 
         return new FriendResource($userFriend);
+    }
+
+    public function accept(UserFriend $invite)
+    {
+        if ($invite->friend_id != request()->user()->id) {
+            return response()->json([
+                'message' => 'Unauthorized.',
+            ], 403);
+        }
+
+        $invite->status = FriendshipStatus::Accepted;
+        $invite->save();
+
+        return response()->json([
+            'message' => 'Friend request accepted.',
+        ]);
+    }
+
+    public function decline(UserFriend $invite)
+    {
+        if ($invite->friend_id != request()->user()->id) {
+            return response()->json([
+                'message' => 'Unauthorized.',
+            ], 403);
+        }
+
+        $invite->status = FriendshipStatus::Declined;
+        $invite->save();
+
+        return response()->json([
+            'message' => 'Friend request declined.',
+        ]);
+    }
+
+    public function remove(UserFriend $invite)
+    {
+        if ($invite->friend_id != request()->user()->id && $invite->user_id != request()->user()->id) {
+            return response()->json([
+                'message' => 'Unauthorized.',
+            ], 403);
+        }
+
+        $invite->delete();
+
+        return response()->json([
+            'message' => 'Friend request deleted.',
+        ]);
     }
 }
