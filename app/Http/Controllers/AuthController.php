@@ -5,7 +5,10 @@ namespace App\Http\Controllers;
 use App\Http\Requests\LoginRequest;
 use App\Http\Requests\RegisterRequest;
 use App\Http\Resources\UserResource;
+use App\Models\Game;
+use App\Models\GameRequest;
 use App\Models\User;
+use App\Models\UserGame;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
@@ -59,6 +62,42 @@ class AuthController extends Controller
         return response()->json([
             'message' => 'Logged out successfully.',
         ]);
+    }
+
+    public function claimGame(Game $game): JsonResponse
+    {
+        UserGame::updateOrCreate(
+            [
+                'user_id' => auth()->id(),
+                'game_id' => $game->id,
+            ],
+            [
+                // Any additional fields like 'score' or 'status' go here
+            ]
+        );
+
+        return response()->json([]);
+    }
+
+    public function unclaimGame(Game $game): JsonResponse
+    {
+        UserGame::where('user_id', auth()->id())->where('game_id', $game->id)->delete();
+
+        return response()->json([]);
+    }
+
+    public function requestGame(Request $request): JsonResponse
+    {
+        $request->validate([
+            'name' => 'required|string|max:255',
+        ]);
+
+        GameRequest::updateOrCreate([
+            'name' => $request->name,
+            'user_id' => auth()->id(),
+        ], []);
+
+        return response()->json([]);
     }
 }
 

@@ -13,12 +13,15 @@ class UserResource extends JsonResource
      */
     public function toArray(Request $request): array
     {
+        $this->loadMissing('games');
+
         return [
             'id'                => $this->id,
             'username'          => $this->username,
             'email'             => $this->email,
             'country_code'      => $this->country_code,
             'email_verified_at' => $this->email_verified_at,
+            'games' => GameResource::collection($this->whenLoaded('games')),
             'created_at'        => $this->created_at,
             'updated_at'        => $this->updated_at,
         ];

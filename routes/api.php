@@ -12,6 +12,15 @@ Route::prefix('auth')->group(function () {
     Route::middleware('auth:sanctum')->group(function () {
         Route::get('/me', [AuthController::class, 'user']);
         Route::post('/logout', [AuthController::class, 'logout']);
+
+        Route::prefix('games')->group(function () {
+            Route::post('/request', [AuthController::class, 'requestGame']);
+
+            Route::prefix('{game}')->group(function () {
+                Route::post('/claim', [AuthController::class, 'claimGame']);
+                Route::post('/unclaim', [AuthController::class, 'unclaimGame']);
+            });
+        });
     });
 });
 
