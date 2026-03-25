@@ -16,7 +16,7 @@ class FriendResource extends JsonResource
         return [
             'id'         => $this->id,
             'status'     => $this->status,
-            'friend'     => new UserResource($this->friend),
+            'friend'     => new UserResource($this->buddy()),
             'is_sender'     => $this->user_id == auth()->id(),
             'created_at' => $this->created_at,
             'updated_at' => $this->updated_at,

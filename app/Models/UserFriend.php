@@ -29,5 +29,15 @@ class UserFriend extends Model
     {
         return $this->belongsTo(User::class, 'friend_id');
     }
+
+    /**
+     * Get the other user in the friendship relative to the authenticated user.
+     */
+    public function buddy(): User
+    {
+        return $this->user_id === auth()->id()
+            ? $this->friend
+            : $this->user;
+    }
 }
 

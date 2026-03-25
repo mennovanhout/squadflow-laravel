@@ -30,6 +30,7 @@ class User extends Authenticatable
 
     public function friends(): HasMany
     {
-        return $this->hasMany(UserFriend::class);
+        return $this->hasMany(UserFriend::class)
+            ->orWhere('friend_id', $this->id);
     }
 }

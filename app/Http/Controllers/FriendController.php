@@ -15,6 +15,7 @@ class FriendController extends Controller
     {
         $friends = UserFriend::with('friend')
             ->where('user_id', $request->user()->id)
+            ->orwhere('friend_id', $request->user()->id)
             ->get();
 
         return FriendResource::collection($friends);
