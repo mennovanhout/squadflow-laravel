@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\FriendController;
 use App\Http\Controllers\GameController;
 use Illuminate\Support\Facades\Route;
 
@@ -17,5 +18,10 @@ Route::prefix('auth')->group(function () {
 Route::middleware('auth:sanctum')->group(function () {
     Route::prefix('games')->group(function () {
         Route::get('/', [GameController::class, 'index']);
+    });
+
+    Route::prefix('friends')->group(function () {
+        Route::get('/', [FriendController::class, 'index']);
+        Route::post('/invite', [FriendController::class, 'invite']);
     });
 });
