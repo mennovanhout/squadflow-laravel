@@ -2,12 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Resources\AchievementResource;
 use App\Http\Resources\GameResource;
 use App\Models\Game;
-use Illuminate\Database\Eloquent\Attributes\Fillable;
-use Illuminate\Http\Request;
 
-#[Fillable(['name', 'image', 'subtitle'])]
 class GameController extends Controller
 {
     public function index()
@@ -15,5 +13,15 @@ class GameController extends Controller
         $games = Game::all();
 
         return GameResource::collection($games);
+    }
+
+    public function achievementsPresets(Game $game)
+    {
+        return AchievementResource::collection($game->achievementPresets);
+    }
+
+    public function achievements(Game $game)
+    {
+        return AchievementResource::collection($game->achievements);
     }
 }

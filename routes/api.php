@@ -27,6 +27,8 @@ Route::prefix('auth')->group(function () {
 Route::middleware('auth:sanctum')->group(function () {
     Route::prefix('games')->group(function () {
         Route::get('/', [GameController::class, 'index']);
+        Route::get('/{game}/achievements-presets', [GameController::class, 'achievementsPresets']);
+        Route::get('/{game}/achievements', [GameController::class, 'achievements']);
     });
 
     Route::prefix('friends')->group(function () {
