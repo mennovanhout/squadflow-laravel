@@ -12,6 +12,8 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 #[Fillable(['user_id', 'unikey', 'title', 'body', 'large_icon', 'payload'])]
 class PushNotification extends Model
 {
+    protected $with = ['user'];
+
     public function user(): BelongsTo
     {
         return $this->belongsTo(User::class);

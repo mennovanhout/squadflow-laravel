@@ -20,7 +20,9 @@ class PushNotificationObserver
 
     public function created(PushNotification $notification): void
     {
-        $fcmToken = $notification->user->firebase_token;
+        $fcmToken = $notification->user->fcm_token;
+
+        ray($fcmToken);
 
         if ($fcmToken == null || $fcmToken == '') {
             return;
