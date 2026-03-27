@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Enums\FriendshipStatus;
 use App\Http\Requests\InviteFriendRequest;
 use App\Http\Resources\FriendResource;
+use App\Models\PushNotification;
 use App\Models\User;
 use App\Models\UserFriend;
 use Illuminate\Http\Request;
@@ -24,6 +25,7 @@ class FriendController extends Controller
 
     public function invite(InviteFriendRequest $request): FriendResource
     {
+        $myId = $request->user()->id;
         $friend = User::where('username', $request->username)->firstOrFail();
 
         $userFriend = UserFriend::create([
@@ -32,6 +34,16 @@ class FriendController extends Controller
         ]);
 
         $userFriend->load('friend');
+
+        if ($friend->fcm_token != null) {
+            PushNotification::create([
+                'user_id' => $friend->id,
+                'unikey' => "invite_{$myId}_{$userFriend->id}",
+                'title' => 'Friend Request',
+                'body' => "You received a friend request of @{$friend->username}!",
+                'payload' => 'friend_request',
+            ]);
+        }
 
         return new FriendResource($userFriend);
     }
