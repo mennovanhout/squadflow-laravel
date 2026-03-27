@@ -39,7 +39,7 @@ class FriendController extends Controller
                 'user_id' => $friend->id,
                 'unikey' => "invite_{$request->user()->id}_{$friend->id}",
                 'title' => 'Friend Request',
-                'body' => "You received a friend request of @{$request->user()->username}!",
+                'body' => "You received a friend request from @{$request->user()->username}!",
                 'payload' => 'friend_request',
             ]);
         }
