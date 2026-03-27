@@ -22,8 +22,6 @@ class PushNotificationObserver
     {
         $fcmToken = $notification->user->fcm_token;
 
-        ray($fcmToken);
-
         if ($fcmToken == null || $fcmToken == '') {
             return;
         }

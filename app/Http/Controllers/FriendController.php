@@ -25,7 +25,6 @@ class FriendController extends Controller
 
     public function invite(InviteFriendRequest $request): FriendResource
     {
-        $myId = $request->user()->id;
         $friend = User::where('username', $request->username)->firstOrFail();
 
         $userFriend = UserFriend::create([
@@ -38,9 +37,9 @@ class FriendController extends Controller
         if ($friend->fcm_token != null) {
             PushNotification::create([
                 'user_id' => $friend->id,
-                'unikey' => "invite_{$myId}_{$friend->id}",
+                'unikey' => "invite_{$request->user()->id}_{$friend->id}",
                 'title' => 'Friend Request',
-                'body' => "You received a friend request of @{$friend->username}!",
+                'body' => "You received a friend request of @{$request->user()->username}!",
                 'payload' => 'friend_request',
             ]);
         }
