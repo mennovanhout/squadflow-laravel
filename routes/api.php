@@ -11,6 +11,7 @@ Route::prefix('auth')->group(function () {
 
     Route::middleware('auth:sanctum')->group(function () {
         Route::get('/me', [AuthController::class, 'user']);
+        Route::post('/fcm-token', [AuthController::class, 'fcmToken']);
         Route::post('/logout', [AuthController::class, 'logout']);
 
         Route::prefix('games')->group(function () {

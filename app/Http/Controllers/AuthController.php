@@ -55,6 +55,19 @@ class AuthController extends Controller
         return new UserResource($request->user());
     }
 
+    public function fcmToken(Request $request): JsonResponse
+    {
+        $request->validate([
+            'token' => 'required|string|max:255',
+        ]);
+
+        $user = auth()->user();
+        $user->fcm_token = $request->token;
+        $user->save();
+
+        return response()->json([]);
+    }
+
     public function logout(Request $request): JsonResponse
     {
         $request->user()->currentAccessToken()->delete();
