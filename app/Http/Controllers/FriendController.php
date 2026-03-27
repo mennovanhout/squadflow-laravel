@@ -38,7 +38,7 @@ class FriendController extends Controller
         if ($friend->fcm_token != null) {
             PushNotification::create([
                 'user_id' => $friend->id,
-                'unikey' => "invite_{$myId}_{$userFriend->id}",
+                'unikey' => "invite_{$myId}_{$friend->id}",
                 'title' => 'Friend Request',
                 'body' => "You received a friend request of @{$friend->username}!",
                 'payload' => 'friend_request',
