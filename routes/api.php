@@ -5,6 +5,9 @@ use App\Http\Controllers\FriendController;
 use App\Http\Controllers\GameController;
 use Illuminate\Support\Facades\Route;
 
+/**
+ * Auth endpoints
+ */
 Route::prefix('auth')->group(function () {
     Route::post('/register', [AuthController::class, 'register']);
     Route::post('/login', [AuthController::class, 'login']);
@@ -25,11 +28,17 @@ Route::prefix('auth')->group(function () {
     });
 });
 
+/**
+ * Regular endpoints
+ */
 Route::middleware('auth:sanctum')->group(function () {
     Route::prefix('games')->group(function () {
         Route::get('/', [GameController::class, 'index']);
-        Route::get('/{game}/achievements-presets', [GameController::class, 'achievementsPresets']);
-        Route::get('/{game}/achievements', [GameController::class, 'achievements']);
+
+        Route::prefix('{game}')->group(function () {
+            Route::get('/achievements-presets', [GameController::class, 'achievementsPresets']);
+            Route::get('/achievements', [GameController::class, 'achievements']);
+        });
     });
 
     Route::prefix('friends')->group(function () {
